@@ -67,3 +67,5 @@ jobs:
           docker push ${{ env.repo_region }}-docker.pkg.dev/${{ env.project_id }}/${{ env.app_name }}/${{ env.app_name }}:${{ env.app_version }}  
           
           
+          
+          
