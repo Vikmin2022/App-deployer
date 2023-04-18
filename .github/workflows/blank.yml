@@ -67,3 +67,6 @@ jobs:
         working-directory: ${{ env.app_name }}
         run: |
           docker push  ${{ env.repo_region }}-docker.pkg.dev/${{ env.project_id }}/${{ env.app_name }}/${{ env.app_name }}:${{ env.tag_new_version }}  
+          
+          
+          
