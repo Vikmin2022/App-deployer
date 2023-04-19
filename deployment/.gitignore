@@ -5,7 +5,7 @@ terraform.tfstate*
 
 backend.tf
 
-2.cluster_setup/backend.tf
+
 /home/projectfarrukh/project_infrastructure/2.cluster_setup/backend.tf
 service-account.json
 envs/dev.tfvars
