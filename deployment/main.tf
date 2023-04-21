@@ -1,49 +1,39 @@
 module "namespace" {
-  source = "../modules/terraform-k8s-namespace"
-  name   = "test"
-  labels = {
-    env = "test"
-  }
-  annotations = {
-    env = "test"
-  }
+  source      = "../modules/terraform-k8s-namespace"
+  name        = var.namespace
+  labels      = var.namespace_labels
+  annotations = var.namespace_annotations
 }
+
 
 module "application" {
   source               = "../modules/terraform-helm-local"
-  deployment_name      = "artemis"
-  deployment_namespace = "test"
+  deployment_name      = "${var.app_name}-${var.environment}"
+  deployment_namespace = var.namespace
   deployment_path      = "../charts/application"
   values_yaml          = <<EOF
-
-# replicaCount: 1
-
 image:
-  repository: us-central1-docker.pkg.dev/terraform-project-vm/artemis/artemis
-  tag: "2.0.0"
+  repository: "${var.repository}"
+  tag: "${var.tag}"
 
 service:
-  port: 5000  
-  
+  port: "${var.port}"
+
 ingress:
   enabled: true
-  annotations:
+  annotations: 
     ingress.kubernetes.io/ssl-redirect: "false"
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-prod-dns01
-    acme.cert-manager.io/http01-edit-in-place: "true"  
-
+    acme.cert-manager.io/http01-edit-in-place: "true"
   hosts:
-    - host: artemis-dev.vikmin2022.de
+    - host: "${var.app_name}-${var.environment}.${var.domain}"
       paths:
         - path: /
           pathType: ImplementationSpecific
-tls: 
-- secretName: chart-example-tls
-  hosts:
-    - artemis-dev.vikmin2022.de
-
-
-      EOF 
-
+  tls: 
+  - secretName: "${var.app_name}-tls"
+    hosts:
+      - "${var.app_name}-${var.environment}.${var.domain}"
+    EOF
 }
