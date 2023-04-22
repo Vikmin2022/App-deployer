@@ -2,7 +2,7 @@
 variable "namespace" {
   description = "Please provide a name for a namespace" 
   type = string
-  default = "test"
+  default = "artemis-dev"
 }
 
 variable "namespace_labels" {
@@ -24,7 +24,7 @@ variable "namespace_annotations" {
 variable "repository" {
   description = "Please provide a repo for docker image" 
   type = string
-  default = "test"
+  default = "us-central1-docker.pkg.dev/terraform-project-vm/artemis/artemis"
 }
 
 variable "port" {
@@ -48,7 +48,7 @@ variable "environment" {
 variable "app_name" {
   description = "Please provide a name for an application" 
   type = string
-  default = "test"
+  default = "artemis"
 }
 
 variable "app_version" {
@@ -60,5 +60,5 @@ variable "app_version" {
 variable "project_id" {
   description = "Please provide a project ID for an application" 
   type = string
-  default = "test"
+  default = "terraform-project-vm"
 }
