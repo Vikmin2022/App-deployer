@@ -1,6 +1,6 @@
 module "namespace" {
   source      = "../modules/terraform-k8s-namespace"
-  name        = var.namespace
+  name        = "${var.app_name}-${var.environment}"
   labels      = var.namespace_labels
   annotations = var.namespace_annotations
 }
@@ -9,12 +9,12 @@ module "namespace" {
 module "application" {
   source               = "../modules/terraform-helm-local"
   deployment_name      = "${var.app_name}-${var.environment}"
-  deployment_namespace = var.namespace
+  deployment_namespace = module.namespace.namespace
   deployment_path      = "../charts/application"
   values_yaml          = <<EOF
 image:
   repository: "${var.repository}"
-  tag: "${var.tag}"
+  tag: "${var.app_version}"
 
 service:
   port: "${var.port}"
