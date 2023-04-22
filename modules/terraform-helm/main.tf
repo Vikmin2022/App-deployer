@@ -1,6 +1,6 @@
 resource "helm_release" "helm_deployment" {
-  name       = var.deployment_name
-  namespace  = var.deployment_namespace
+  name       = var.app_name
+  namespace  = var.app_namespace
   chart      = var.chart
   repository = var.repository
   version    = var.chart_version
