@@ -30,7 +30,7 @@ variable "repository" {
 variable "port" {
   description = "Please provide a port number for an application" 
   type = string
-  default = "80"
+  default = "5000"
 }
 
 variable "domain" {
