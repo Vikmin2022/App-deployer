@@ -1,13 +1,3 @@
-variable "namespace" {
-  type = string
-}
-variable "namespace_labels" {
-  type = map(any)
-}
-variable "namespace_annotations" {
-  type = map(any)
-}
-
 
 variable "namespace" {
   description = "Please provide a name for a namespace" 
@@ -40,13 +30,13 @@ variable "repository" {
 variable "port" {
   description = "Please provide a port number for an application" 
   type = string
-  default = "80"
+  default = "5000"
 }
 
 variable "domain" {
   description = "Please provide a domain for an application" 
   type = string
-  default = "test"
+  default = "vikmin2022.de"
 }
 
 variable "environment" {
