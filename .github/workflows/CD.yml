@@ -8,7 +8,7 @@ env:
   cluster_name:       "terraform-project "
   helm_repository:    "https://github.com/farrukh90/custom_helm_chart.git"
   domain:             "vikmin2022.de"
-  environment:        "qa"
+  environment:        "dev"
 
 
 
