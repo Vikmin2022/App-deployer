@@ -17,7 +17,7 @@ image:
   tag: "${var.app_version}"
 
 service:
-  port: "${var.port}"
+  port: "${var.app_port}"
 
 ingress:
   enabled: true

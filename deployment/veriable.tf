@@ -27,7 +27,7 @@ variable "repository" {
   default     = "us-central1-docker.pkg.dev/terraform-project-vm/artemis/artemis"
 }
 
-variable "port" {
+variable "app_port" {
   description = "Please provide a port number for an application"
   type        = string
   default     = "5000"
