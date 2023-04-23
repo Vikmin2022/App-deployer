@@ -15,11 +15,11 @@ env:
 
 name: CD
 
-  on:
-    workflow_run:
-      workflows: ["CI"]
-      types:
-        - completed
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
 
   # Allows you to run this workflow manually from the Actions tab
     workflow_dispatch:
