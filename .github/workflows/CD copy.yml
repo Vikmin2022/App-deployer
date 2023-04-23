@@ -15,17 +15,12 @@ env:
 
 name: CD
 
-
-
 on:
   workflow_run:
-    workflows: [ CI ]
+    workflows: ["CI"]
     types:
       - completed
   workflow_dispatch:
-
-
-
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
