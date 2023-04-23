@@ -6,7 +6,7 @@ env:
   app_name: "nodejs"
   tag_new_version: "${GITHUB_SHA}"
 
-name: CI
+name: Nodejs
 
 # Controls when the workflow will run
 on:
