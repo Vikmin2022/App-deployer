@@ -5,8 +5,8 @@ env:
   app_port:           "5000"
   project_id:         "terraform-project-vm"
   repository:         "us-central1-docker.pkg.dev/${{ secrets.PROJECT_ID }}/artemis/artemis"
-  cluster_name:       "terraform-project "
-  helm_repository:    "https://github.com/farrukh90/custom_helm_chart.git"
+
+ 
   domain:             "vikmin2022.de"
   environment:        "dev"
 
@@ -19,7 +19,7 @@ name: CD
 
 on:
   workflow_run:
-    workflows: [ CI ]
+    workflows: ["CI"]
     types:
       - completed
   workflow_dispatch:
