@@ -79,3 +79,5 @@ jobs:
           -var project_id="${{ env.project_id }}" \
           -var environment="${{ env.environment }}" \
           --auto-approve
+          
+          
