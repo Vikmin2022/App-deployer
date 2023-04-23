@@ -11,8 +11,6 @@ env:
   environment:        "qa"
 
 
-
-
 name: CD
 
 on:
