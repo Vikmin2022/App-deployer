@@ -7,11 +7,11 @@ module "namespace" {
 
 
 module "application" {
-  source               = "../modules/terraform-helm-local"
+  source        = "../modules/terraform-helm-local"
   app_name      = "${var.app_name}-${var.environment}"
   app_namespace = module.namespace.namespace
   app_path      = "../charts/application"
-  values_yaml          = <<EOF
+  values_yaml   = <<EOF
 image:
   repository: "${var.repository}"
   tag: "${var.app_version}"
