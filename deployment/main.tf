@@ -8,9 +8,9 @@ module "namespace" {
 
 module "application" {
   source               = "../modules/terraform-helm-local"
-  deployment_name      = "${var.app_name}-${var.environment}"
-  deployment_namespace = module.namespace.namespace
-  deployment_path      = "../charts/application"
+  app_name      = "${var.app_name}-${var.environment}"
+  app_namespace = module.namespace.namespace
+  app_path      = "../charts/application"
   values_yaml          = <<EOF
 image:
   repository: "${var.repository}"

@@ -1,9 +1,9 @@
-variable "deployment_name" {
+variable "app_name" {
   type        = string
   description = "- (Required) Chart release name."
 }
 
-variable "deployment_namespace" {
+variable "app_namespace" {
   type        = string
   default     = "default"
   description = "- (Optional) Namespace where to deploy resources to."
