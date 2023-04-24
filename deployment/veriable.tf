@@ -27,7 +27,7 @@ variable "repository" {
   default     = "test"
 }
 
-variable "app_port" {
+variable "port" {
   description = "Please provide a port number for an application"
   type        = string
   default     = "80"
