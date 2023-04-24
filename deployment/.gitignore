@@ -3,7 +3,7 @@
 .terraform
 terraform.tfstate*
 
-backend.tf
+
 
 
 /home/projectfarrukh/project_infrastructure/2.cluster_setup/backend.tf
