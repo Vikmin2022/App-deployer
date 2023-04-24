@@ -2,7 +2,7 @@
 variable "namespace" {
   description = "Please provide a name for a namespace"
   type        = string
-  default     = "artemis-dev"
+  default     = "test"
 }
 
 variable "namespace_labels" {
