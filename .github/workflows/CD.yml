@@ -12,7 +12,7 @@ env:
   environment:        "dev"
 
 
-name: ContinuousDeployment
+name: CD
 
 
 on:
