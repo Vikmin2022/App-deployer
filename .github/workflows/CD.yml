@@ -42,6 +42,7 @@ jobs:
         with:
           credentials_json: '${{ secrets.SERVICE_ACCOUNT }}'
 
+      
 
       - id: 'get-credentials'
         uses: 'google-github-actions/get-gke-credentials@v1'
@@ -53,7 +54,11 @@ jobs:
       - id: 'kubeconfig'
         run: 'mkdir ~/.kube && cat $KUBECONFIG > ~/.kube/config'
 
-      
+       # Configure Backend and Initialize
+      - name: Configure Backend
+        working-directory: "deployment"
+        run: |
+          source setenv.sh  
       - name: Initialize
         working-directory: "deployment"
         run: |

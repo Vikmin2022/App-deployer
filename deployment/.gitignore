@@ -3,6 +3,8 @@
 .terraform
 terraform.tfstate*
 
+backend.tf
+
 
 
 
