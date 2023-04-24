@@ -59,6 +59,8 @@ jobs:
         working-directory: "deployment"
         run: |
           source setenv.sh  
+
+          
       - name: Initialize
         working-directory: "deployment"
         run: |
