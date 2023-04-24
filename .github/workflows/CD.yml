@@ -4,7 +4,7 @@ env:
   app_version:        "${GITHUB_SHA}"
   app_port:           "5000"
   project_id:         "terraform-project-vm"
-  repository:         "us-central1-docker.pkg.dev/${{ secrets.PROJECT_ID }}/artemis/artemis"
+  repository:         "us-central1-docker.pkg.dev/terraform-project-vm/artemis/artemis"
 
  
   domain:             "vikmin2022.de"
@@ -13,12 +13,16 @@ env:
 
 name: CD
 
+name: CI
+
+ Controls when the workflow will run
 on:
-  workflow_run:
-    workflows: ["CI"]
-    types:
-      - completed
-  workflow_dispatch:
+   # Triggers the workflow on push or pull request events but only for the "main" branch
+   push:
+     branches: [ "master" ]
+   pull_request:
+     branches: [ "master" ]
+
 
   # Allows you to run this workflow manually from the Actions tab
     workflow_dispatch:

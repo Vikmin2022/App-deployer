@@ -1,23 +1,23 @@
 env: 
-  repo: "https://github.com/farrukh90/artemis.git"
-  app_version: "2.0.0"
+  repo: "https://github.com/farrukh90/nodejs"
+  app_version: "1.0.0"
   repo_region: "us-central1"
   project_id: "terraform-project-vm"
-  app_name: "artemis"
+  app_name: "nodejs"
   tag_new_version: "${GITHUB_SHA}"
 
 # name: CI
 
-#  Controls when the workflow will run
+# # Controls when the workflow will run
 # on:
-#    # Triggers the workflow on push or pull request events but only for the "main" branch
-#    push:
-#      branches: [ "master" ]
-#    pull_request:
-#      branches: [ "master" ]
+#   # Triggers the workflow on push or pull request events but only for the "main" branch
+#   push:
+#     branches: [ "master" ]
+#   pull_request:
+#     branches: [ "master" ]
 
-  # Allows you to run this workflow manually from the Actions tab
-   workflow_dispatch:
+#   # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -35,20 +35,14 @@ jobs:
       - name: Clone a repo
         run: |
           git clone "${{ env.repo }}"
-
-
       - name: Checkout branch
         working-directory: ${{ env.app_name }}
         run: |
           git checkout "${{ env.app_version }}"
-
-
       - name: Build Image
         working-directory: ${{ env.app_name }}
         run: |
           docker build  -t  ${{ env.repo_region }}-docker.pkg.dev/${{ env.project_id }}/${{ env.app_name }}/${{ env.app_name }}:${{ env.tag_new_version }}  . 
-
-
       # Authenticate to GCP
       - id: 'auth'
         name: 'Authenticate to Google Cloud'
@@ -62,7 +56,6 @@ jobs:
           gcloud auth configure-docker  ${{ env.repo_region }}-docker.pkg.dev
           
           
-
       - name: Docker push
         working-directory: ${{ env.app_name }}
         run: |
@@ -70,14 +63,6 @@ jobs:
           
           
           
-          
-          
-          
-          
-          
-          
-          
-
           
           
           
