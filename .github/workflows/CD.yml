@@ -15,11 +15,9 @@ env:
 name: CD
 
 on:
-  workflow_run:
-    workflows: ["CI"]
-    types:
-      - completed
-  workflow_dispatch:     
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:    
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
