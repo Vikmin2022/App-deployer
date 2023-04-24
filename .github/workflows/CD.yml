@@ -16,7 +16,8 @@ name: CD
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - master
   workflow_dispatch:    
 
   # Allows you to run this workflow manually from the Actions tab
