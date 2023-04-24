@@ -1,8 +1,8 @@
 env:
   region:             "us-central1"
-  app_name:           "artemis"
+  app_name:           "nodejs"
   app_version:        "${GITHUB_SHA}"
-  port:               "5000"
+  port:               "8080"
   project_id:         "terraform-project-vm"
   cluster_name:       "terraform-project" 
   repository:         "us-central1-docker.pkg.dev/terraform-project-vm/artemis/artemis"
