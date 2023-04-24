@@ -26,6 +26,7 @@ ingress:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-prod-dns01
     acme.cert-manager.io/http01-edit-in-place: "true"
+    external-dns.alpha.kubernetes.io/ttl: "1m"
   hosts:
     - host: "${var.app_name}-${var.environment}.${var.domain}"
       paths:
