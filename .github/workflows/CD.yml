@@ -14,7 +14,6 @@ env:
 
 name: CD
 
-
 on:
   workflow_run:
     workflows: ["CI"]
